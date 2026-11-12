@@ -1,0 +1,182 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400" width="100%" height="100%">
+  <defs>
+    <!-- Background Gradients -->
+    <linearGradient id="bg-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0a0f1d" />
+      <stop offset="50%" stop-color="#0f172a" />
+      <stop offset="100%" stop-color="#020617" />
+    </linearGradient>
+
+    <linearGradient id="text-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#38bdf8" />
+      <stop offset="50%" stop-color="#818cf8" />
+      <stop offset="100%" stop-color="#c084fc" />
+    </linearGradient>
+
+    <linearGradient id="badge-grad-1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0ea5e9" stop-opacity="0.2" />
+      <stop offset="100%" stop-color="#38bdf8" stop-opacity="0.05" />
+    </linearGradient>
+
+    <linearGradient id="badge-grad-2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#6366f1" stop-opacity="0.2" />
+      <stop offset="100%" stop-color="#818cf8" stop-opacity="0.05" />
+    </linearGradient>
+
+    <linearGradient id="badge-grad-3" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#10b981" stop-opacity="0.2" />
+      <stop offset="100%" stop-color="#34d399" stop-opacity="0.05" />
+    </linearGradient>
+
+    <!-- Grid Pattern -->
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#1e293b" stroke-width="0.7" opacity="0.6" />
+    </pattern>
+
+    <!-- Glow Filter -->
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="8" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+
+    <filter id="blur-bg" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="40" />
+    </filter>
+  </defs>
+
+  <style>
+    @keyframes pulseOrb {
+      0%, 100% { transform: scale(1) translate(0, 0); opacity: 0.35; }
+      50% { transform: scale(1.15) translate(30px, -20px); opacity: 0.55; }
+    }
+    @keyframes pulseOrb2 {
+      0%, 100% { transform: scale(1.1) translate(0, 0); opacity: 0.3; }
+      50% { transform: scale(0.9) translate(-40px, 25px); opacity: 0.5; }
+    }
+    @keyframes floatParticle {
+      0% { transform: translateY(0px) translateX(0px); opacity: 0.2; }
+      50% { transform: translateY(-25px) translateX(15px); opacity: 0.7; }
+      100% { transform: translateY(0px) translateX(0px); opacity: 0.2; }
+    }
+    @keyframes scanBeam {
+      0% { transform: translateY(-50px); opacity: 0; }
+      50% { opacity: 0.6; }
+      100% { transform: translateY(420px); opacity: 0; }
+    }
+    @keyframes radarSpin {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+    .orb-1 { animation: pulseOrb 8s ease-in-out infinite; transform-origin: 200px 100px; }
+    .orb-2 { animation: pulseOrb2 10s ease-in-out infinite; transform-origin: 1000px 300px; }
+    .p-1 { animation: floatParticle 5s ease-in-out infinite; }
+    .p-2 { animation: floatParticle 7s ease-in-out infinite 1s; }
+    .p-3 { animation: floatParticle 6s ease-in-out infinite 2s; }
+    .scan-line { animation: scanBeam 6s linear infinite; }
+    .radar { transform-origin: 1050px 120px; animation: radarSpin 12s linear infinite; }
+    .title-text {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+    }
+    .sub-text {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      font-weight: 400;
+    }
+    .badge-text {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, monospace;
+      font-weight: 600;
+      font-size: 13px;
+    }
+  </style>
+
+  <!-- 1. Background Rect -->
+  <rect width="1200" height="400" fill="url(#bg-grad)" rx="16" />
+
+  <!-- 2. Grid Layer -->
+  <rect width="1200" height="400" fill="url(#grid)" rx="16" />
+
+  <!-- 3. Ambient Dynamic Glowing Orbs (Deep Background) -->
+  <g filter="url(#blur-bg)">
+    <circle class="orb-1" cx="220" cy="120" r="140" fill="#0284c7" />
+    <circle class="orb-2" cx="980" cy="280" r="160" fill="#6366f1" />
+    <circle cx="600" cy="380" r="100" fill="#0d9488" opacity="0.25" />
+  </g>
+
+  <!-- 4. Scanning Audit Beam Effect (Background Subtle) -->
+  <g class="scan-line" opacity="0.4">
+    <line x1="100" y1="0" x2="1100" y2="0" stroke="url(#text-grad)" stroke-width="2" filter="url(#glow)" />
+  </g>
+
+  <!-- 5. Decorative Radar / Compliance Shield Node (Right side, non-intrusive) -->
+  <g opacity="0.45">
+    <circle cx="1050" cy="120" r="70" fill="none" stroke="#334155" stroke-width="1.5" stroke-dasharray="4,4" />
+    <circle cx="1050" cy="120" r="45" fill="none" stroke="#475569" stroke-width="1" />
+    <circle cx="1050" cy="120" r="20" fill="none" stroke="#0ea5e9" stroke-width="1.5" opacity="0.7" />
+    <!-- Radar Scanner Hand -->
+    <g class="radar">
+      <line x1="1050" y1="120" x2="1120" y2="120" stroke="#38bdf8" stroke-width="2" opacity="0.8" />
+      <polygon points="1050,120 1115,100 1120,120" fill="#38bdf8" opacity="0.15" />
+    </g>
+  </g>
+
+  <!-- 6. Floating Telemetry Particles (Subtle) -->
+  <circle class="p-1" cx="150" cy="280" r="3" fill="#38bdf8" />
+  <circle class="p-2" cx="320" cy="90" r="2.5" fill="#818cf8" />
+  <circle class="p-3" cx="880" cy="90" r="3" fill="#34d399" />
+  <circle class="p-1" cx="1020" cy="320" r="2.5" fill="#f43f5e" />
+
+  <!-- 7. FOREGROUND CONTENT (Guaranteed high visibility and sharp contrast) -->
+
+  <!-- Top Category Tag -->
+  <g transform="translate(80, 55)">
+    <rect width="320" height="30" rx="15" fill="#0f172a" stroke="#334155" stroke-width="1.2" />
+    <circle cx="15" cy="15" r="4" fill="#10b981">
+      <animate attributeName="opacity" values="1;0.4;1" dur="2s" repeatCount="indefinite" />
+    </circle>
+    <text x="28" y="20" class="sub-text" font-size="12" fill="#94a3b8" letter-spacing="1">CURATED SECURITY &amp; SIEM DIRECTORY</text>
+  </g>
+
+  <!-- Main Title -->
+  <text x="80" y="145" class="title-text" font-size="44" fill="#ffffff">
+    Compliance &amp; Audit Logging
+  </text>
+  <text x="80" y="195" class="title-text" font-size="34" fill="url(#text-grad)">
+    Enterprise SaaS &amp; Open-Source Ecosystem
+  </text>
+
+  <!-- Subtitle -->
+  <text x="80" y="240" class="sub-text" font-size="16" fill="#94a3b8">
+    Immutable Audit Trails • SIEM Correlation • Regulatory Compliance (SOX, HIPAA, GDPR, PCI-DSS)
+  </text>
+
+  <!-- Feature Pills / Badges in Foreground -->
+  <g transform="translate(80, 275)">
+    <!-- Pill 1: Immutable Trails -->
+    <g transform="translate(0, 0)">
+      <rect width="180" height="42" rx="10" fill="url(#badge-grad-1)" stroke="#0284c7" stroke-width="1" />
+      <text x="20" y="26" class="badge-text" fill="#38bdf8">🔒 Immutable Trails</text>
+    </g>
+
+    <!-- Pill 2: SIEM Correlation -->
+    <g transform="translate(195, 0)">
+      <rect width="180" height="42" rx="10" fill="url(#badge-grad-2)" stroke="#6366f1" stroke-width="1" />
+      <text x="22" y="26" class="badge-text" fill="#a5b4fc">⚡ SIEM Correlation</text>
+    </g>
+
+    <!-- Pill 3: Audit Ready -->
+    <g transform="translate(390, 0)">
+      <rect width="170" height="42" rx="10" fill="url(#badge-grad-3)" stroke="#059669" stroke-width="1" />
+      <text x="24" y="26" class="badge-text" fill="#6ee7b7">🛡️ Audit Ready</text>
+    </g>
+
+    <!-- Pill 4: Zero Ingest Fees -->
+    <g transform="translate(575, 0)">
+      <rect width="175" height="42" rx="10" fill="#1e293b" stroke="#475569" stroke-width="1" opacity="0.8" />
+      <text x="20" y="26" class="badge-text" fill="#cbd5e1">💸 Ingest Optimized</text>
+    </g>
+  </g>
+
+  <!-- Live Status Border Indicator -->
+  <rect x="0" y="396" width="1200" height="4" fill="url(#text-grad)" rx="2" />
+</svg>
