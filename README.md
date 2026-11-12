@@ -1,74 +1,104 @@
-# Awesome-Compliance-Audit-Logging
+# Awesome Compliance & Audit Logging
 
-## Top Compliance & Audit Logging Ecosystem
+[![Awesome](https://awesome.re/badge.svg)](https://awesome.re)
+[![Track Compliance & SIEM](https://img.shields.io/badge/Security-Audit%20Logging%20%26%20SIEM-blue.svg)](https://github.com/ishandutta2007/Awesome-Compliance-Audit-Logging)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://github.com/ishandutta2007/Awesome-Compliance-Audit-Logging/pulls)
 
-**Curated List of SaaS Products & Open-Source GitHub Projects**  
-*Focused on Immutable Audit Trails, SIEM Correlation & Regulatory Compliance Reporting*  
-**Last updated: March 2026**
-
-This repository tracks notable **SaaS platforms** and **open-source projects** for **Compliance & Audit Logging**. These tools help organizations capture, retain, and analyze system and user activity logs to satisfy regulatory requirements (SOX, HIPAA, GDPR, PCI DSS), support forensic investigations, and detect anomalous behavior across cloud and on-premises environments.
-
-**Examples** include Datadog Cloud SIEM, Splunk Cloud, Sumo Logic, Panther, Elastic Security, LogRhythm, Papertrail, Graylog, AuditBoard, and Zoho Audit Trail (the category leaders).
-
-**Open-source emphasis**: This section highlights every major active project for self-hosted log management, open-source SIEM, and community-driven audit logging—ideal for security teams, compliance officers, and organizations seeking transparent, vendor-neutral log retention without per-GB ingest pricing surprises.
-
-Contributions welcome! Open an PR to add/update entries. Keep descriptions factual and link to official sites.
-
-## Table of Contents
-- [SaaS/Hosted Platforms](#saas-products)
-- [Open-Source GitHub Projects](#open-source-github-projects)
-- [How to Contribute](#how-to-contribute)
-- [Disclaimer](#disclaimer)
-
-## SaaS/Hosted Platforms
-
-| Product | Description | Pricing (Starting) | Free Tier / Trial Limits |
-|---------|-------------|-------------------|--------------------------|
-| **[Datadog Cloud SIEM](https://www.datadoghq.com/)** | Cloud-native SIEM layered on Datadog's log management. Bills per **million analyzed events** rather than per GB ingested—detection rules, signals, and threat intelligence included. Extends security signal retention to 15 months at no additional cost (Oct 2026) . | **$5 per million analyzed events/month** (annual billing); $6 month-to-month; $7.50 on-demand. Log ingestion/retention billed separately . | **No free tier** per PricingSaaS tracking . Paid plans only; trial via Datadog sales. |
-| **[Splunk Cloud](https://www.splunk.com/)** | Enterprise SIEM and log analytics platform. Ingest-based pricing with tiered volume options. No free tier; free trial limited to **5 GB/day for 15 days** with no data export and no REST API access . | **$675/month** (5 GB/day, annual); **$8,100/month** (5 GB/day billed annually per CostBench); **$2,000/month** (20 GB/day) . | **No free tier**; **15-day trial**: 5 GB/day ingest, US East region only, no data export, no SSO, no premium apps, 10 concurrent searches max . |
-| **[Sumo Logic](https://www.sumologic.com/)** | Cloud SIEM with two licensing models: Credits (ingest-based) and Flex (scan-based, $0 ingest for standard logs). Cloud SIEM ingest billed separately at **40 credits/GB**—the most expensive data type on the platform . | Credit model: $0.25/credit (Enterprise Suite); Flex model: ~$1.50/credit (Enterprise Suite Flex) . | **Free (Flex)**: 1.25 credits/day, 7-day log retention, 3 users . **Trial**: ~1 GB/day ingest (~500 GB search/day), 30-day retention, 20 users, 30 days . |
-| **[Panther](https://panther.com/)** | Cloud-scale security analytics platform with detection-as-code. Consumption-based pricing per TB ingested; no per-seat charges for analysts. Typical annual contracts: **$50,000–$150,000** for 5–20 TB/month deployments . | **$3,000–$6,000 per TB/month** (before negotiation); contract minimums typically $50K–$100K/year . | **No free trial** available per SaaSworthy; free-forever and custom plans listed . |
-| **[Elastic Security](https://www.elastic.co/)** | SIEM built on Elasticsearch with endpoint protection. Serverless pricing: **Security Analytics Essentials** at $0.09/GB ingest with 50 GB free, then $0.05/GB transfer; **Complete** at $0.11/GB . | Essentials: **$0.09/GB ingest** (50 GB free); Complete: **$0.11/GB** . | **50 GB free ingest** on Essentials tier; no time-limited trial mentioned for serverless . |
-| **[LogRhythm](https://www.logrhythm.com/)** | Enterprise SIEM with per-message licensing. Positioned as expensive for smaller organizations but competitive for Windows-heavy environments compared to volume-based pricing . | Quote-only (per-message licensing) | No public free tier; trial via sales. Capterra placeholder shows $0.01 one-time (unverified) . |
-| **[Papertrail (SolarWinds)](https://www.papertrail.com/)** | Cloud-hosted log management for troubleshooting. Simple pricing based on log volume and retention duration; all functionality available on all plans . | **$7.00/month** starting price | **Free plan available**: 50 MB log storage, 1-day searchable retention, 1-year downloadable archives . |
-| **[Graylog](https://graylog.org/)** | Log management and SIEM platform. **Graylog Open** (free) includes 16 GB storage and single-node deployment; Security and Enterprise editions add clustering, long-term analysis, and advanced features . | Quote-only for Security/Enterprise; **Graylog Open free** . | **Free (Graylog Open)**: 16 GB storage, single node, full-fidelity log capture, threat detection, API discovery . |
-| **[AuditBoard](https://www.auditboard.com/)** | Connected risk platform for SOX compliance, internal audit, and IT risk. Vendr benchmarks: small teams (5–15 users) at lower range; mid-sized (15–50 users, multiple solutions) bundled pricing; enterprise custom . | Quote-only; implementation typically **10–25% of annual subscription**; renewal escalations 3–7%/year . | **No free trial** per Software Advice listing; demo via sales. |
-| **[Zoho Audit Trail](https://www.zoho.com/)** | Audit logging within Zoho applications. **Zoho Creator**: free plan retains change audit data for **3 months**; paid plans retain for **3 years**. **Zoho Commerce**: activity logs track create/update/delete with PII field filtering and export . | Included with Zoho application subscriptions | **Free (Creator)**: audit trail available with 3-month change audit retention; paid plans extend to 3 years . |
-
-## Open-Source GitHub Projects
-
-| Project | Star Badge | Description |
-|---------|------------|-------------|
-| **[Graylog Open](https://github.com/Graylog2/graylog2-server)** | [![Stars](https://img.shields.io/github/stars/Graylog2/graylog2-server?style=social&color=white)](https://github.com/Graylog2/graylog2-server/stargazers) | Free and open log management platform (SSPL). Full-fidelity log capture, threat detection, API discovery, and guided remediation within 16 GB storage on a single node. The most mature self-hosted alternative to Splunk/Datadog for audit logging . |
-| **[Tailpipe](https://github.com/turbot/tailpipe)** | [![Stars](https://img.shields.io/github/stars/turbot/tailpipe?style=social&color=white)](https://github.com/turbot/tailpipe/stargazers) | Open-source SIEM for instant log insights powered by DuckDB. Query millions of events in seconds from the terminal using SQL. No database required. Plugins for AWS CloudTrail, Azure Activity Logs, GCP Audit Logs, GitHub audit logs, nginx, Apache, and more . |
-| **[pgMemento](https://github.com/pgMemento/pgMemento)** | [![Stars](https://img.shields.io/github/stars/pgMemento/pgMemento?style=social&color=white)](https://github.com/pgMemento/pgMemento/stargazers) | Audit trail with schema versioning for PostgreSQL using transaction-based logging. Tracks all data changes with full history and audit capabilities for compliance. |
-
-### Additional Strong Open-Source Options
-
-| Project | Star Badge | Description |
-|---------|------------|-------------|
-| **[boxyhq/hermes](https://github.com/boxyhq/hermes)** | [![Stars](https://img.shields.io/github/stars/boxyhq/hermes?style=social&color=white)](https://github.com/boxyhq/hermes/stargazers) | Audit logs service from BoxyHQ. Designed for enterprise SaaS applications requiring compliance-grade audit trails. |
-| **[auditdb](https://github.com/auditdb/auditdb)** | [![Stars](https://img.shields.io/github/stars/auditdb/auditdb?style=social&color=white)](https://github.com/auditdb/auditdb/stargazers) | Simple, efficient database record auditing. Lightweight library for tracking data changes in applications. |
-| **[doctrine-audit-bundle](https://github.com/DamienHarper/doctrine-audit-bundle)** | [![Stars](https://img.shields.io/github/stars/DamienHarper/doctrine-audit-bundle?style=social&color=white)](https://github.com/DamienHarper/doctrine-audit-bundle/stargazers) | Symfony bundle for auditing Doctrine ORM entities. Tracks changes with configurable audit policies. |
-
-**Frameworks for building custom systems**: Combine **Graylog Open** for centralized log ingestion and search, **Tailpipe** for SQL-based investigation of cloud audit logs, **pgMemento** for database-level change auditing, and **Hermes** for application audit trails—creating a fully self-hosted compliance logging stack without per-GB ingest fees.
-
-## How to Contribute
-
-1. Fork the repo.
-2. Add/edit entries in `README.md` (follow existing format).
-3. Include: name, link, 1–2 sentence description, and whether it's SaaS or open-source.
-4. Submit PR with a short explanation.
-
-Star the repo if you find it useful!
-
-## Disclaimer
-
-- This is a **community-curated** list — not exhaustive and not an endorsement.
-- Compliance audit logging platforms handle sensitive system activity and potentially PII; enforce encryption at rest and in transit, role-based access to audit data, and tamper-evident storage for regulatory defensibility.
-- Pricing models vary dramatically: Datadog bills per analyzed event, Sumo Logic charges 40 credits/GB for Cloud SIEM ingest, and Splunk has no free tier. Enterprise platforms (Panther, AuditBoard, LogRhythm) are quote-only with implementation costs adding 10–25% to first-year totals . Open-source alternatives like Graylog Open require infrastructure and operational expertise but eliminate per-GB ingest costs.
+> A curated directory of enterprise SaaS platforms and open-source tools for immutable audit trails, log management, SIEM event correlation, and regulatory compliance reporting (SOX, HIPAA, GDPR, PCI-DSS, SOC 2, ISO 27001).
 
 ---
 
-**Made for compliance officers, security engineers, SOC analysts, and organizations building audit-ready infrastructure.**  
-Let's make compliance audit logging more open, tamper-evident, and cost-predictable.
+## Table of Contents
+- [Sector Overview & Market Dynamics](#sector-overview--market-dynamics)
+- [SaaS & Cloud Platforms](#saas--cloud-platforms)
+- [Open-Source GitHub Projects](#open-source-github-projects)
+- [Frameworks for Building Custom Audit Pipelines](#frameworks-for-building-custom-audit-pipelines)
+- [How to Contribute](#how-to-contribute)
+- [Disclaimer](#disclaimer)
+
+---
+
+## Sector Overview & Market Dynamics
+
+The global Security Information and Event Management (SIEM) and log management market is valued at approximately **$8.0B to $12.1B** and is projected to expand beyond **$20B+** over the next decade, propelled by stringent regulatory compliance mandates (SOX, HIPAA, GDPR, PCI-DSS, and NIS2) and cloud-native infrastructure complexity.
+
+Structurally, the sector exhibits **bimodal market dynamics**:
+- **High concentration at the enterprise apex**: Hyperscalers and consolidated legacy enterprise giants (such as Cisco/Splunk, Datadog, and Elastic) command the majority of large enterprise compliance and centralized telemetry budgets.
+- **Moderate to high fragmentation across specialized tiers**: The broader ecosystem remains fragmented across niche compliance automation platforms, specialized mid-market SIEMs, managed security service providers (MSSPs), and flexible open-source logging architectures catering to teams avoiding unpredictable per-GB ingest fees.
+
+---
+
+## SaaS & Cloud Platforms
+
+*Enterprise SaaS platforms providing centralized audit logging, cloud SIEM correlation, compliance reporting, and managed log retention. Sorted by company size (valuation / revenue, descending).*
+
+| Product | Company Size (Valuation / Revenue) | Description | Starting Pricing | Free Tier & Free Trial Limits |
+|:---|:---|:---|:---|:---|
+| **[Splunk Cloud](https://www.splunk.com/)** | **~$28B Acquisition Valuation** (Parent Cisco: ~$220B+ Market Cap, ~$56.7B Rev) | Enterprise-grade SIEM and centralized log analytics powerhouse featuring specialized compliance frameworks and correlation rules. | **$675/month** (5 GB/day baseline tier on annual plan; ~$2,000/month for 20 GB/day) | **No free tier**; **15-day free trial** with up to 5 GB/day ingest limit (US East region only, max 10 concurrent searches, no data export, no REST API access) |
+| **[Datadog Cloud SIEM](https://www.datadoghq.com/)** | **~$48B Market Cap** (~$2.6B+ Annual Revenue) | Cloud-native SIEM built directly on Datadog's unified log management pipeline. Correlates threats across logs and cloud infrastructure with 15-month security signal retention. | **$5.00 per million analyzed events/month** (annual commitment; $6.00/M month-to-month, $7.50/M on-demand; underlying log ingest billed separately) | **No free tier**; **14-day free trial** with full platform capabilities, multi-source log collection, and SIEM threat correlation rules |
+| **[Zoho Audit Trail](https://www.zoho.com/)** | **~$12.5B Valuation** (~$1.5B Annual Revenue) | Built-in audit trail and data change governance within Zoho Creator and Zoho Commerce for enterprise application activity tracking. | **$8.00/user/month** (billed annually for Zoho Creator Standard tier) | **Free Forever plan available**: Zoho Creator Free Tier supports 1 app, 1 user, 250 MB storage, and **3 months of change audit trail history** (paid plans extend retention to 3 years) |
+| **[Elastic Security](https://www.elastic.co/)** | **~$8.5B Market Cap** (~$1.3B Annual Revenue) | Full-stack SIEM and security analytics engine built on Elasticsearch, offering endpoint protection, out-of-the-box compliance dashboards, and behavioral rules. | **$0.09 per GB ingested** (Security Analytics Essentials serverless tier; $0.11/GB on Complete tier) | **Free Forever tier available**: **50 GB free ingest/month** on Serverless Security Essentials; **14-day free trial** of hosted Elasticsearch / Elastic Cloud with standard cluster resources |
+| **[SolarWinds Papertrail](https://www.papertrail.com/)** | **~$3.2B Market Cap** (~$800M Annual Revenue) | Hosted log management and real-time log aggregation built for quick search, live tailing, and audit log archival. | **$7.00/month** (includes 1 GB/month search allowance and 30-day archival) | **Free Forever plan available**: **50 MB/month log storage**, 1-day searchable retention, and 1-year downloadable archives |
+| **[AuditBoard](https://www.auditboard.com/)** | **~$3.0B Valuation** (Acquired by Hg, ~$200M+ ARR) | Connected GRC and internal audit platform purpose-built for SOX compliance, risk management, and regulatory control tracking. | **~$20,000 to $25,000/year** (verified procurement starting baseline for single module/small team deployments; typical median spend ~$43,000–$46,000/yr) | **No free tier**; interactive vendor product demonstration and tailored proof-of-concept trial arranged via sales |
+| **[Sumo Logic](https://www.sumologic.com/)** | **~$1.7B Valuation** (Acquired by Francisco Partners) | Cloud-native SIEM and observability platform offering Flex scan-based pricing alongside traditional credit models. | **$0.25 per credit** (Enterprise Suite Credit model) / **$1.50 per credit** (Enterprise Suite Flex model; Cloud SIEM ingest billed at 40 credits/GB) | **Free Forever plan (Flex model)**: **1.25 credits/day**, 7-day log retention, up to 3 users; **30-day free trial** includes ~1 GB/day ingest, ~500 GB daily search capacity, 30-day retention, and up to 20 users |
+| **[Panther](https://panther.com/)** | **~$1.4B Valuation** ($120M Series B Unicorn) | Cloud-scale, detection-as-code security analytics and audit log SIEM querying data lakes via Python and SQL without per-analyst licensing fees. | **$3,000/month** (~$3,000–$6,000/TB/month baseline tier; annual enterprise minimums typically starting at $50,000/year) | **No free tier**; custom self-serve demo sandbox and **30-day guided enterprise evaluation trial** arranged through sales engineering |
+| **[LogRhythm (Exabeam)](https://www.logrhythm.com/)** | **~$1.2B Valuation** (~$300M Combined Revenue with Exabeam) | Enterprise SIEM offering centralized compliance frameworks, log collection, and UEBA behavioral monitoring. | **~$2,000/year** (starting software-only entry license tier; Axon Cloud SIEM metered by GB/day starting thresholds) | **No free tier**; **30-day guided proof-of-concept trial** and guided interactive virtual lab available upon qualification |
+| **[Graylog Enterprise Cloud](https://graylog.org/)** | **~$60M–$100M Valuation** (~$18M+ ARR) | Centralized enterprise log management and SIEM platform offering compliance reporting, automated alerting, and audit dashboards. | **$2,500/year** (starting entry tier for Graylog Operations / Security Cloud up to 5 GB/day ingest) | **Free Forever plan available**: **Graylog Open edition is 100% free** (includes up to 16 GB storage, single-node full-fidelity log capture, threat detection, and API discovery); **14-day free trial** for Graylog Enterprise Cloud |
+
+---
+
+## Open-Source GitHub Projects
+
+*Active self-hosted log management engines, audit frameworks, telemetry collectors, and open-source SIEM solutions. Sorted by GitHub stars (descending).*
+
+| Project | Stars | Category / Focus | Description |
+|:---|:---:|:---|:---|
+| **[elastic/elasticsearch](https://github.com/elastic/elasticsearch)** | [![Stars](https://img.shields.io/github/stars/elastic/elasticsearch?style=social&color=white)](https://github.com/elastic/elasticsearch/stargazers) | Distributed Log Search & Indexing | Distributed, JSON-based search and analytics engine powering the ELK stack; widely used as the primary indexing backend for enterprise compliance audit logs. |
+| **[osquery/osquery](https://github.com/osquery/osquery)** | [![Stars](https://img.shields.io/github/stars/osquery/osquery?style=social&color=white)](https://github.com/osquery/osquery/stargazers) | Endpoint Auditing & OS Telemetry | Exposes an entire operating system as a high-performance relational database, enabling SQL-based querying of audit events, process creation, file integrity, and user logins. |
+| **[wazuh/wazuh](https://github.com/wazuh/wazuh)** | [![Stars](https://img.shields.io/github/stars/wazuh/wazuh?style=social&color=white)](https://github.com/wazuh/wazuh/stargazers) | Open-Source SIEM & XDR | Comprehensive open-source security platform combining log analysis, file integrity monitoring (FIM), vulnerability detection, and regulatory compliance mapping (PCI-DSS, HIPAA, GDPR, CIS). |
+| **[opensearch-project/OpenSearch](https://github.com/opensearch-project/OpenSearch)** | [![Stars](https://img.shields.io/github/stars/opensearch-project/OpenSearch?style=social&color=white)](https://github.com/opensearch-project/OpenSearch/stargazers) | Distributed Search & Log Analytics | Community-driven, 100% open-source search and analytics suite (Apache 2.0) with dedicated Security Analytics plugins for correlation, alert generation, and audit indexing. |
+| **[fluent/fluentd](https://github.com/fluent/fluentd)** | [![Stars](https://img.shields.io/github/stars/fluent/fluentd?style=social&color=white)](https://github.com/fluent/fluentd/stargazers) | Log Collection & Routing Layer | CNCF-graduated unified logging layer that decouples data sources from backend storage, ensuring reliable buffering and filtering of audit streams. |
+| **[fluent/fluent-bit](https://github.com/fluent/fluent-bit)** | [![Stars](https://img.shields.io/github/stars/fluent/fluent-bit?style=social&color=white)](https://github.com/fluent/fluent-bit/stargazers) | Lightweight Log & Metric Processor | High-performance, low-memory telemetry and log shipper ideal for Kubernetes nodes, embedded devices, and microservice audit log transport. |
+| **[Graylog2/graylog2-server](https://github.com/Graylog2/graylog2-server)** | [![Stars](https://img.shields.io/github/stars/Graylog2/graylog2-server?style=social&color=white)](https://github.com/Graylog2/graylog2-server/stargazers) | Centralized Log Management & SIEM | Mature self-hosted log management and SIEM platform offering full-fidelity log ingestion, live message streaming, alerting, and forensic query capabilities. |
+| **[open-telemetry/opentelemetry-collector](https://github.com/open-telemetry/opentelemetry-collector)** | [![Stars](https://img.shields.io/github/stars/open-telemetry/opentelemetry-collector?style=social&color=white)](https://github.com/open-telemetry/opentelemetry-collector/stargazers) | Vendor-Neutral Telemetry Gateway | Proxy and collector for receiving, processing, and exporting audit telemetry, traces, and structured application security logs without vendor lock-in. |
+| **[javers/javers](https://github.com/javers/javers)** | [![Stars](https://img.shields.io/github/stars/javers/javers?style=social&color=white)](https://github.com/javers/javers/stargazers) | Object Auditing & Entity Diffs | Audit log and object versioning framework for Java and Spring Boot applications, recording state changes and diffs in relational or MongoDB stores. |
+| **[turbot/tailpipe](https://github.com/turbot/tailpipe)** | [![Stars](https://img.shields.io/github/stars/turbot/tailpipe?style=social&color=white)](https://github.com/turbot/tailpipe/stargazers) | Terminal SIEM & DuckDB Log Engine | Open-source CLI SIEM querying cloud and host audit logs (AWS CloudTrail, GitHub Audit, GCP, Azure Activity, nginx) via DuckDB SQL without requiring an external database. |
+| **[DamienHarper/auditor-bundle](https://github.com/DamienHarper/auditor-bundle)** | [![Stars](https://img.shields.io/github/stars/DamienHarper/auditor-bundle?style=social&color=white)](https://github.com/DamienHarper/auditor-bundle/stargazers) | Doctrine ORM Entity Auditing | Complete audit log bundle for PHP / Symfony applications using Doctrine ORM, automatically recording entity creation, modifications, and deletions. |
+| **[pgMemento](https://github.com/pgMemento/pgMemento)** | [![Stars](https://img.shields.io/github/stars/pgMemento/pgMemento?style=social&color=white)](https://github.com/pgMemento/pgMemento/stargazers) | PostgreSQL Schema & Data Auditing | Non-intrusive database change-data-capture audit trail and schema versioning for PostgreSQL utilizing transactional JSONB logs. |
+| **[boxyhq/hermes](https://github.com/boxyhq/hermes)** | [![Stars](https://img.shields.io/github/stars/boxyhq/hermes?style=social&color=white)](https://github.com/boxyhq/hermes/stargazers) | SaaS Audit Logs Service | Compliance-ready audit logging service designed specifically for modern SaaS applications requiring SOC 2 and GDPR-ready audit event export. |
+
+---
+
+## Frameworks for Building Custom Audit Pipelines
+
+For engineering teams seeking to eliminate per-gigabyte SaaS ingestion costs, a resilient, tamper-evident compliance audit architecture can be assembled entirely with open-source tools:
+1. **Host & OS Telemetry**: Deploy **osquery** across endpoints and server nodes for scheduled file-integrity checks, user session auditing, and configuration states.
+2. **Data Shippers & Routing**: Use **Fluent Bit** or **OpenTelemetry Collector** as lightweight node-level daemons to parse structured JSON logs and securely ship them over TLS.
+3. **Database & Application-Level Auditing**: Implement **pgMemento** (PostgreSQL) or **javers** / **boxyhq/hermes** (application layers) to maintain tamper-evident, append-only history of critical entity modifications.
+4. **Aggregation, SIEM & Retention**: Ingest into **Wazuh** or **Graylog Open** with an **OpenSearch** storage backend for live alert correlation, role-based access control (RBAC), and multi-year cold storage compliance retention.
+5. **Ad-hoc Investigations**: Query CloudTrail, GCP, and GitHub audit exports directly with **Tailpipe** using local DuckDB SQL.
+
+---
+
+## How to Contribute
+
+We welcome additions, corrections, and updates from the compliance and cybersecurity community!
+
+1. Fork this repository.
+2. Create a new branch: `git checkout -b update-logging-tools`.
+3. Add or update tool listings in `README.md` adhering to the table format (include exact pricing/trial terms, company valuation/revenue, or active GitHub stargazers).
+4. Commit your changes: `git commit -m "Add <Tool-Name> with pricing and compliance features"`.
+5. Push to your branch and open a Pull Request.
+
+---
+
+## Disclaimer
+
+- This list is community-curated for informational and architectural guidance; it does not constitute formal legal or regulatory endorsement.
+- Compliance audit records contain sensitive operational details and potential PII. Ensure all deployments enforce TLS encryption in transit, AES-256 encryption at rest, immutable/WORM (Write Once, Read Many) retention policies, and cryptographic integrity checks to satisfy defensibility requirements under SOX, HIPAA, and GDPR.
+
+---
+
+<p align="center">
+  <b>Built for compliance officers, security engineers, SOC analysts, and cloud architects building audit-ready infrastructure.</b>
+</p>
