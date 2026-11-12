@@ -1,6 +1,6 @@
 # Awesome-Compliance-Audit-Logging
 
-# Top Compliance & Audit Logging Ecosystem
+## Top Compliance & Audit Logging Ecosystem
 
 **Curated List of SaaS Products & Open-Source GitHub Projects**  
 *Focused on Immutable Audit Trails, SIEM Correlation & Regulatory Compliance Reporting*  
