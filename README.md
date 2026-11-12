@@ -59,9 +59,9 @@ Structurally, the sector exhibits **bimodal market dynamics**:
 
 ## 💻 Open-Source GitHub Projects
 
-*Active self-hosted log management engines, audit frameworks, telemetry collectors, and open-source SIEM solutions. Sorted by GitHub stars (descending).* 🌟
+*Active self-hosted log management engines, audit frameworks, telemetry collectors, and open-source SIEM solutions. Sorted by GitHub_Stars (descending).* 🌟
 
-| Project | Stars | Category / Focus | Description |
+| Project | GitHub_Stars | Category / Focus | Description |
 |:---|:---:|:---|:---|
 | **[elastic/elasticsearch](https://github.com/elastic/elasticsearch)** | [![Stars](https://img.shields.io/github/stars/elastic/elasticsearch?style=social&color=white)](https://github.com/elastic/elasticsearch/stargazers) | Distributed Log Search & Indexing | Distributed, JSON-based search and analytics engine powering the ELK stack; widely used as the primary indexing backend for enterprise compliance audit logs. |
 | **[osquery/osquery](https://github.com/osquery/osquery)** | [![Stars](https://img.shields.io/github/stars/osquery/osquery?style=social&color=white)](https://github.com/osquery/osquery/stargazers) | Endpoint Auditing & OS Telemetry | Exposes an entire operating system as a high-performance relational database, enabling SQL-based querying of audit events, process creation, file integrity, and user logins. |
